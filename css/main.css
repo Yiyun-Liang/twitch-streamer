@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+$background: #ecf0e7;
+$panel: #e1e1e6;
+$online: #b8cca6;
+$header: #5c5457;
+$text: #8ea7c2;
+$offline: #4a5e82;
+$grow: width 0.4s linear;
+
+
+body {
+  background-color: $background;
+  font-family: 'Raleway';
+  font-size: 14px;
+  color: $text;
+}
+
+a, a:focus, a:hover, a:visited {
+  color: $online;
+}
+
+h1 {
+  font-family: 'Raleway';
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 15px 0px;
+  font-size: 3em;
+}
+
+.panel {
+  background-color: $panel;
+  margin: 0px auto;
+  padding: 0px;
+  max-width: 700px;
+}
+
+.header {
+  margin: 2px 0px;
+  padding: 5px;
+  line-height: 50px;
+}
+
+.selectors {
+  position: absolute;
+  right: 0px;
+  bottom: 5px;
+  color: $header;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#online {
+  .circle {
+    background-color: $online;
+  }
+}
+
+#offline {
+  .circle {
+    background-color: $text;
+  }
+}
+
+.active, .selector:hover {
+  width: 65px !important;
+  transition: $grow;
+  cursor: pointer;
+}
+.selector {
+  line-height: 20px;
+  height: 20px;
+  background-color: $panel;
+  padding: 0px 5px;
+  margin: 2px 0px;
+  width: 20px;
+  overflow: hidden;
+  float: right;
+  clear: right;
+  transition: $grow;
+  .circle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: $header;
+    border: 1px solid $header;
+    float: left;
+    margin: 5px 5px 5px 0px;
+  }
+  p {
+    float: right;
+    margin: 0px;
+  }
+}
+
+#header {
+  position: relative;
+  background-color: $header;
+  color: $panel;
+  padding: 5px 65px 5px 15px;
+}
+
+footer {
+  position: relative;
+  text-align: center;
+  background-color: $header;
+  color: $panel;
+  padding: 5px 65px 5px 15px;
+}
+
+.logo {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+  border: 3px solid $panel;
+}
+
+.offline {
+  background-color: $offline;
+}
+
+.online {
+  background-color: $online;
+  color: $header;
+  a, a:focus, a:hover, a:visited {
+    color: $offline;
+  }
+}
+
+#streaming {
+  font-style: italic;
+}
+
+#name, #streaming {
+  line-height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .panel {
+    margin: 10px auto;
+  }
+
+  #name, #streaming {
+    line-height: 50px;
+    height: 50px;
+  }
+
+  #header {
+    padding-left: 65px;
+  }
+}
